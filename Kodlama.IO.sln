@@ -5,11 +5,15 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ders 3 - 2 (Matematik)", "Ders 3 - 2 (Matematik)\Ders 3 - 2 (Matematik).csproj", "{332123C5-E9E1-47DF-BAEF-5716722FCAAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ders 3 - 1 (Metodlar)", "Ders 3 - 1 (Metodlar)\Ders 3 - 1 (Metodlar).csproj", "{5515A686-2A69-43DB-BD1D-64C798B0E5FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ders 3 - 1 (Metodlar)", "Ders 3 - 1 (Metodlar)\Ders 3 - 1 (Metodlar).csproj", "{5515A686-2A69-43DB-BD1D-64C798B0E5FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ders 3", "Ders 3", "{270A0A1D-9C93-427C-9494-738DB849F826}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ders 3 - 3 (Deger ve Referans Tipler)", "Ders 3 - 3 (Deger ve Referans Tipler)\Ders 3 - 3 (Deger ve Referans Tipler).csproj", "{23F6F055-3EF7-452F-8768-033DD00DD612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ders 3 - 3 (Deger ve Referans Tipler)", "Ders 3 - 3 (Deger ve Referans Tipler)\Ders 3 - 3 (Deger ve Referans Tipler).csproj", "{23F6F055-3EF7-452F-8768-033DD00DD612}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ders 4", "Ders 4", "{4A89EA83-6B10-435D-BE37-EFE3DEF2E84E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ders 3 - Ödev 3 (Class Metod Demo)", "Ders 3 - Ödev 3\Ders 3 - Ödev 3 (Class Metod Demo).csproj", "{A5791B22-0F0D-463A-8F0C-01987C7C7214}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,10 @@ Global
 		{23F6F055-3EF7-452F-8768-033DD00DD612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23F6F055-3EF7-452F-8768-033DD00DD612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23F6F055-3EF7-452F-8768-033DD00DD612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5791B22-0F0D-463A-8F0C-01987C7C7214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5791B22-0F0D-463A-8F0C-01987C7C7214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5791B22-0F0D-463A-8F0C-01987C7C7214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5791B22-0F0D-463A-8F0C-01987C7C7214}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +45,7 @@ Global
 		{332123C5-E9E1-47DF-BAEF-5716722FCAAA} = {270A0A1D-9C93-427C-9494-738DB849F826}
 		{5515A686-2A69-43DB-BD1D-64C798B0E5FF} = {270A0A1D-9C93-427C-9494-738DB849F826}
 		{23F6F055-3EF7-452F-8768-033DD00DD612} = {270A0A1D-9C93-427C-9494-738DB849F826}
+		{A5791B22-0F0D-463A-8F0C-01987C7C7214} = {270A0A1D-9C93-427C-9494-738DB849F826}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3FA53FC6-019D-45A6-9C6A-6D1E14A7B5EF}
