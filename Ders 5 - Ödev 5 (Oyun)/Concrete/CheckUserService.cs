@@ -12,6 +12,7 @@ namespace Ders_5_Odev_5.Concrete
     {
         public bool CheckUser(Player player)
         {
+            if (player.Firstname.Length == 0 || player.Lastname.Length == 0) return false;
             return true;
         }
     }

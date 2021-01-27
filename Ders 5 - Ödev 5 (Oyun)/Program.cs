@@ -10,14 +10,16 @@ namespace Ders_5_Odev_5
     {
         static void Main(string[] args)
         {
-            Player player1 = new Player { Id = 1, Firstname = "Serhan", Lastname = "Altug", BirthDate = new System.DateTime(1977, 06, 04), NationalIdentity = "27706387112" };
+            Player player1 = new Player { Id = 1, Firstname = "Serhan", Lastname = "Altuğ", BirthDate = new System.DateTime(1977, 06, 04), NationalIdentity = "27706387112" };
             Player player2 = new Player { Id = 2, Firstname = "Engin", Lastname = "Demiroğ", BirthDate = new System.DateTime(1985, 01, 06), NationalIdentity = "1234567810" };
+            Player player3 = new Player { Id = 3, Firstname = "Zeynep", Lastname = "", BirthDate = new System.DateTime(2012, 05, 08), NationalIdentity = "1234567810" };
 
             IPlayerManager playerManager = new PlayerManager(new MernisServiceAdapter());
             playerManager.Add(player1);
             playerManager.Add(player2);
+            playerManager.Add(player3);
 
-            player1.NationalIdentity = "27706387112";
+            player1.NationalIdentity = "12345678910";
             playerManager.Update(player1);
 
             playerManager.Delete(player2);

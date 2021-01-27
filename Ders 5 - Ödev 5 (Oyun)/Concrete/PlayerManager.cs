@@ -21,7 +21,8 @@ namespace Ders_5_Odev_5.Concrete
             }
             else
             {
-                throw new Exception(player.Firstname + " " + player.Lastname + " is not a valid person.");
+                Console.WriteLine("*** ERROR : Player is invalid.");
+                //throw new Exception(player.Firstname + " " + player.Lastname + " is not a valid person.");
             }
 
         }
