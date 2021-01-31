@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ders 5 - 1 (OOP2)", "Ders 5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ders 5 - 2 (OOP3)", "Ders 5 - 2 (OOP3)\Ders 5 - 2 (OOP3).csproj", "{95B2446D-7301-42E4-AD5F-2F7E7D1E456F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ders 5 - Ödev 5 (Oyun)", "Ders 5 - Ödev 5 (Oyun)\Ders 5 - Ödev 5 (Oyun).csproj", "{C53A7CAA-012C-4F10-8639-40FFC9B8E2C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ders 5 - Ödev 5 (Oyun)", "Ders 5 - Ödev 5 (Oyun)\Ders 5 - Ödev 5 (Oyun).csproj", "{C53A7CAA-012C-4F10-8639-40FFC9B8E2C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ders 7", "Ders 7", "{06664AD7-4103-40F8-9C66-39DAA9504477}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
