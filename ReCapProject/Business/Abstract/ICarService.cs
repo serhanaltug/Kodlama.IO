@@ -13,6 +13,6 @@ namespace Business.Abstract
 
         List<Car> GetCarsByBrandId(int id);
 
-        void Add(Car car);
+        //void Add(Car car);
     }
 }
