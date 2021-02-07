@@ -11,17 +11,46 @@ namespace Console
     {
         static void Main(string[] args)
         {
-            ICarService _carService = new CarManager(new CarDal());
+            BrandTest();
+            ColorTest();
+            CarTest();
 
-            //var newCar = new Car { Id = 1, BrandId = 1, ColorId = 1, Name = "3 HB AT", ModelYear = 2020, DailyPrice = 200000, Description = "Otomatik vites, cam tavan, deri koltuk" };
-            //_carService.Add(newCar);
+        }
 
-            List<Car> cars = _carService.GetAll();
-            foreach (var car in cars)
+        private static void BrandTest()
+        {
+            IBrandService _brandService = new BrandManager(new BrandDal());
+            _brandService.Add(new Brand { Id = 2, Name = "Mercedes" });
+            _brandService.Add(new Brand { Id = 3, Name = "BMW" });
+            _brandService.Update(new Brand { Id = 3, Name = "BMW 2" });
+
+            foreach (var brand in _brandService.GetAll())
             {
-                System.Console.WriteLine($"Id: { car.Id }, BrandId: { car.BrandId }, Description: { car.Description }");
+                System.Console.WriteLine($"Id: { brand.Id }, Name: { brand.Name }");
             }
+        }
 
+        private static void ColorTest()
+        {
+            IColorService _colorService = new ColorManager(new ColorDal());
+            _colorService.Add(new Color { Id = 2, Name = "Beyaz" });
+
+            foreach (var color in _colorService.GetAll())
+            {
+                System.Console.WriteLine($"Id: { color.Id }, Name: { color.Name }");
+            }
+        }
+
+        private static void CarTest() 
+        {
+            ICarService _carService = new CarManager(new CarDal());
+            var newCar = new Car { Id = 3, BrandId = 2, ColorId = 2, Name = "3.20", ModelYear = 2020, DailyPrice = 200000, Description = "Otomatik vites, cam tavan, deri koltuk" };
+            _carService.Add(newCar);
+
+            foreach (var car in _carService.GetCarDetails())
+            {
+                System.Console.WriteLine($"Id: { car.CarId }, CarName: { car.CarName }, Brand: { car.BrandName }, Color: {car.ColorName}, DailyPrice: {car.DailyPrice}");
+            }
         }
     }
 }
