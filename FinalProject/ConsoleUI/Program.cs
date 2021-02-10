@@ -14,12 +14,19 @@ namespace ConsoleUI
             //CategoryTest();
 
             ProductManager productManager = new ProductManager(new ProductDal());
+            var result = productManager.GetProductDetails();
 
-            foreach (var product in productManager.GetProductDetails())
+            if (result.Success)
             {
-                Console.WriteLine(product.ProductName + " - " + product.CategoryName);
+                foreach (var product in result.Data)
+                {
+                    Console.WriteLine(product.ProductName + " - " + product.CategoryName);
+                }
             }
-
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
         }
 
         private static void CategoryTest()
@@ -34,7 +41,7 @@ namespace ConsoleUI
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new ProductDal());
-            List<Product> products = productManager.GetAll();
+            List<Product> products = productManager.GetAll().Data;
             foreach (var product in products)
             {
                 Console.WriteLine(product.ProductName);
