@@ -19,6 +19,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
             builder.RegisterType<ProductDal>().As<IProductDal>().SingleInstance();
 
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
+            builder.RegisterType<CategoryDal>().As<ICategoryDal>().SingleInstance();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
