@@ -3,9 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
@@ -27,7 +25,7 @@ namespace Business.Concrete
         public IResult Delete(User user)
         {
             _userDal.Delete(user);
-            return new SuccessResult();
+            return new SuccessResult(Messages.Deleted);
         }
 
         public IDataResult<User> Get(int id)
@@ -43,7 +41,7 @@ namespace Business.Concrete
         public IResult Update(User user)
         {
             _userDal.Update(user);
-            return new SuccessResult();
+            return new SuccessResult(Messages.Updated);
         }
     }
 }

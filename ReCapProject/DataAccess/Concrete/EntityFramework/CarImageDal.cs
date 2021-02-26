@@ -4,7 +4,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class BrandDal : EfEntityRepositoryBase<Brand, ReCapContext>, IBrandDal
+    public class CarImageDal : EfEntityRepositoryBase<CarImage, ReCapContext>, ICarImageDal
     {
 
     }
