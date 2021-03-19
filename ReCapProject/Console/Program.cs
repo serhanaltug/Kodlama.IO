@@ -65,7 +65,7 @@ namespace Console
             //var newCar = new Car { BrandId = 2, ColorId = 2, Name = "3.20", ModelYear = 2020, DailyPrice = 200000, Description = "Otomatik vites, cam tavan, deri koltuk" };
             //service.Add(newCar);
 
-            foreach (var car in service.GetCarDetails().Data)
+            foreach (var car in service.GetCarDetails(null, null).Data)
             {
                 System.Console.WriteLine($"Id: { car.CarId }, CarName: { car.CarName }, Brand: { car.BrandName }, Color: {car.ColorName}, DailyPrice: {car.DailyPrice}");
             }

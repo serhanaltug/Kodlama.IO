@@ -46,6 +46,8 @@ namespace WebAPI
             //services.AddSingleton<IUserService, UserManager>();
             //services.AddSingleton<IUserDal, UserDal>();
 
+            services.AddCors();
+
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -75,12 +77,11 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseHttpsRedirection();
-
+            app.UseStaticFiles();
             app.UseRouting();
 
-            app.UseStaticFiles();
+            app.UseCors(options => options.WithOrigins("http://localhost:4200").AllowAnyHeader());
 
             app.UseAuthentication();
 

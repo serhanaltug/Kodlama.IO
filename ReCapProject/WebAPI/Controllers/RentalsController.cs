@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace WebAPI.Controllers
 {
@@ -24,6 +25,15 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("GetAllWithDetails")]
+        public IActionResult GetAllWithDetails()
+        {
+            var result = _service.GetRentalDetails();
+            if (result.Success)
+                return Ok(result);
+            return BadRequest(result);
+        }
+
         [HttpGet("GetById")]
         public IActionResult GetById(int id)
         {
@@ -31,6 +41,13 @@ namespace WebAPI.Controllers
             if (result.Success)
                 return Ok(result);
             return BadRequest(result);
+        }
+
+        [HttpPost("Check")]
+        public IActionResult Check(Rental rental)
+        {
+            var result = _service.Check(rental);
+            return Ok(result);
         }
 
         [HttpPost("Add")]

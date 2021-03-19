@@ -15,5 +15,13 @@
         public static string PasswordError = "Şifre hatalı.";
         public static string SuccessfulLogin = "Kullanıcı girişi başarılı.";
         public static string UserAlreadyExists = "Kullanıcı zaten var.";
+        public static string RentSuccess = "Aracı kiraladınız.";
+        public static string RentCheckSuccess = "Araç kiralamaya uygundur.";
+        public static string RentCheckFailed = "Bu araç şu anda kirada.";
+        public static string RentFailed= "Aracı kiralarken hata oluştu.";
+        public static string RentDateCannotLessThenToday = "Kiralama tarihi bugünden önce olamaz.";
+        public static string RentDateError = "Lütfen tarihleri kontrol ediniz.";
+        public static string OrderCompleted = "Aracı kiraladığınız için teşekkür ederiz.";
+        public static string OrderNotCompleted = "Araç kiralama başarısız oldu.";
     }
 }

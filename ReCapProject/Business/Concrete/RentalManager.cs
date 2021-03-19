@@ -4,6 +4,7 @@ using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using System;
 using System.Collections.Generic;
 
 namespace Business.Concrete
@@ -19,11 +20,12 @@ namespace Business.Concrete
 
         public IResult Add(Rental rental)
         {
-            var result = _rentalDal.GetRentalDetails(x=> x.CustomerId == rental.CustomerId && x.CarId == rental.CarId && x.ReturnDate == null);
-            if (result.Count > 0)
-                return new ErrorResult(Messages.CarCanNotBeRentError);
-            _rentalDal.Add(rental);
-            return new SuccessResult(Messages.Added);
+            if (Check(rental).Success)
+            {
+                _rentalDal.Add(rental);
+                return new SuccessResult(Messages.Added);
+            }
+            return new ErrorResult(Check(rental).Message);
         }
 
         public IResult Delete(Rental rental)
@@ -51,6 +53,33 @@ namespace Business.Concrete
             }
             else
                 return new ErrorDataResult<List<RentalDetailsDto>>("Veritabanında hiç kayıt bulunmamaktadır.");
+        }
+
+        public IResult Check(Rental rental)
+        {
+            if (rental.RentDate < DateTime.Now) return new ErrorResult(Messages.RentDateCannotLessThenToday);
+            if (rental.ReturnDate < rental.RentDate) return new ErrorResult(Messages.RentDateError);
+
+            var result = _rentalDal.GetRentalDetails(x => x.CarId == rental.CarId && x.ReturnDate == null);
+            if (result.Count > 0)
+                return new ErrorResult(Messages.CarCanNotBeRentError);
+
+            //var rentable = true;
+            //var rentals = _rentalDal.GetRentalDetails(x => x.CarId == rental.CarId);
+            //if (rentals.Count > 0)
+            //{
+            //    foreach(var car in rentals)
+            //    {
+            //        if (rental.ReturnDate < car.RentDate || rental.RentDate > car.ReturnDate) rentable = true;
+            //    }
+
+            //    if (!rentable)
+            //    {
+            //        return new ErrorResult(Messages.RentCheckFailed);
+            //    }
+            //}
+
+            return new SuccessResult(Messages.RentCheckSuccess);
         }
 
         public IResult Update(Rental rental)
