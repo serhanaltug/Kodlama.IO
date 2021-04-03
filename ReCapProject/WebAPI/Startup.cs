@@ -28,24 +28,6 @@ namespace WebAPI
         {
             services.AddControllers();
 
-            //services.AddSingleton<IBrandService, BrandManager>();
-            //services.AddSingleton<IBrandDal, BrandDal>();
-
-            //services.AddSingleton<ICarService, CarManager>();
-            //services.AddSingleton<ICarDal, CarDal>();
-
-            //services.AddSingleton<IColorService, ColorManager>();
-            //services.AddSingleton<IColorDal, ColorDal>();
-
-            //services.AddSingleton<ICustomerService, CustomerManager>();
-            //services.AddSingleton<ICustomerDal, CustomerDal>();
-
-            //services.AddSingleton<IRentalService, RentalManager>();
-            //services.AddSingleton<IRentalDal, RentalDal>();
-
-            //services.AddSingleton<IUserService, UserManager>();
-            //services.AddSingleton<IUserDal, UserDal>();
-
             services.AddCors();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -77,6 +59,9 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.ConfigureCustomExceptionMiddleware();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();

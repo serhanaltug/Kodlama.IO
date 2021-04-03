@@ -15,6 +15,15 @@ namespace WebAPI.Controllers
             _service = service;
         }
 
+        [HttpGet("GetFindexScore")]
+        public IActionResult GetFindexScore(int id)
+        {
+            var result = _service.GetFindexScore(id);
+            if (result.Success)
+                return Ok(result);
+            return BadRequest(result);
+        }
+
         [HttpGet("GetAll")]
         public IActionResult GetAll() 
         {

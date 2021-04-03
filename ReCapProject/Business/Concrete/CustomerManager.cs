@@ -4,6 +4,7 @@ using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using System;
 using System.Collections.Generic;
 
 namespace Business.Concrete
@@ -48,6 +49,13 @@ namespace Business.Concrete
         {
             _customerDal.Update(customer);
             return new SuccessResult(Messages.Updated);
+        }
+
+        public IDataResult<int> GetFindexScore(int id)
+        {
+            Random random = new Random();
+            int fakeFindexScore = random.Next(0, 1900);
+            return new SuccessDataResult<int>(fakeFindexScore, "Findex Score");
         }
     }
 }

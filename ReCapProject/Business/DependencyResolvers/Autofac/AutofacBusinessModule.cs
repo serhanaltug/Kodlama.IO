@@ -35,6 +35,8 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
             builder.RegisterType<CarImageDal>().As<ICarImageDal>().SingleInstance();
 
+            builder.RegisterType<OrderManager>().As<IOrderService>().SingleInstance();
+
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 

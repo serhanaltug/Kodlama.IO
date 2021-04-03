@@ -10,6 +10,7 @@ namespace Business.Abstract
         IDataResult<List<Customer>> GetAll();
         IDataResult<List<CustomerDetailsDto>> GetCustomerDetails();
         IDataResult<Customer> Get(int id);
+        IDataResult<int> GetFindexScore(int id);
 
         IResult Add(Customer customer);
         IResult Update(Customer customer);
